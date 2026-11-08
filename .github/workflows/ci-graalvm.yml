@@ -17,23 +17,24 @@
 
 name: CI - GraalVM
 
-on:
-  pull_request:
-    branches: [ master ]
-    paths:
-      - '.github/workflows/ci-graalvm.yml'
-      - '.github/workflows/reusable-global-environment.yml'
-      - '.github/actions/setup-build-environment/**'
-      - 'mvnw'
-      - 'mvnw.cmd'
-      - '.mvn/**'
-      - '**/pom.xml'
-      - 'infra/reachability-metadata/**'
-      - 'test/native/**'
-  schedule:
-    - cron: '0 13 * * 1-5' # Once a day between Monday and Friday. UTC time
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     branches: [ master ]
+#     paths:
+#       - '.github/workflows/ci-graalvm.yml'
+#       - '.github/workflows/reusable-global-environment.yml'
+#       - '.github/actions/setup-build-environment/**'
+#       - 'mvnw'
+#       - 'mvnw.cmd'
+#       - '.mvn/**'
+#       - '**/pom.xml'
+#       - 'infra/reachability-metadata/**'
+#       - 'test/native/**'
+#   schedule:
+#     - cron: '0 13 * * 1-5' # Once a day between Monday and Friday. UTC time
+#   workflow_dispatch:
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

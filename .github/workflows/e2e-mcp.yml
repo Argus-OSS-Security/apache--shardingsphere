@@ -17,23 +17,24 @@
 
 name: E2E - MCP
 
-on:
-  pull_request:
-    branches: [ master ]
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - ready_for_review
-    paths:
-      - '.github/workflows/e2e-mcp.yml'
-      - 'distribution/mcp/**'
-      - 'mcp/**'
-      - 'test/e2e/mcp/**'
-  schedule:
-    - cron: '0 19 * * 1-5'
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     branches: [ master ]
+#     types:
+#       - opened
+#       - reopened
+#       - synchronize
+#       - ready_for_review
+#     paths:
+#       - '.github/workflows/e2e-mcp.yml'
+#       - 'distribution/mcp/**'
+#       - 'mcp/**'
+#       - 'test/e2e/mcp/**'
+#   schedule:
+#     - cron: '0 19 * * 1-5'
+#   workflow_dispatch:
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

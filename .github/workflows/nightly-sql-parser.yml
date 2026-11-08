@@ -17,11 +17,12 @@
 
 name: Nightly - SQL parser loading from external cases
 
-on:
-  schedule:
-    - cron: '0 18 * * 1-5' # Once a day between Monday and Friday. UTC time
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   schedule:
+#     - cron: '0 18 * * 1-5' # Once a day between Monday and Friday. UTC time
+#   workflow_dispatch:
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

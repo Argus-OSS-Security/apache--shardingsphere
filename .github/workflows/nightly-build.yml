@@ -17,16 +17,17 @@
 
 name: Nightly - Build
 
-on:
-  schedule:
-    - cron: '0 16 * * *' # Once a day. UTC time
-  workflow_dispatch:
-    inputs:
-      commit-id:
-        required: false
-        type: string
-        description: 'Commit ID to build. Default is the latest commit on the default branch.'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   schedule:
+#     - cron: '0 16 * * *' # Once a day. UTC time
+#   workflow_dispatch:
+#     inputs:
+#       commit-id:
+#         required: false
+#         type: string
+#         description: 'Commit ID to build. Default is the latest commit on the default branch.'
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

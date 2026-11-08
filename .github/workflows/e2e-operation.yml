@@ -17,13 +17,14 @@
 
 name: E2E - Operation
 
-on:
-  pull_request:
-    branches: [ master ]
-    paths-ignore:
-      - '**/*.md'
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     branches: [ master ]
+#     paths-ignore:
+#       - '**/*.md'
+#   workflow_dispatch:
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

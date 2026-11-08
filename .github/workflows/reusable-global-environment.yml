@@ -15,14 +15,15 @@
 # limitations under the License.
 #
 
-on:
-  workflow_call:
-    outputs:
-      GLOBAL_RUNS_ON:
-        value: ${{ jobs.init-environment.outputs.GLOBAL_RUNS_ON }}
-      GLOBAL_JOB_ENABLED:
-        value: ${{ jobs.init-environment.outputs.GLOBAL_JOB_ENABLED }}
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     outputs:
+#       GLOBAL_RUNS_ON:
+#         value: ${{ jobs.init-environment.outputs.GLOBAL_RUNS_ON }}
+#       GLOBAL_JOB_ENABLED:
+#         value: ${{ jobs.init-environment.outputs.GLOBAL_JOB_ENABLED }}
+# 
 permissions:
   contents: read
 

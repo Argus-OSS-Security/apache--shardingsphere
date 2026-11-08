@@ -17,16 +17,17 @@
 
 name: Release - MCP
 
-on:
-  release:
-    types: [ published ]
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Release version tag, for example 5.5.4'
-        required: true
-        type: string
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   release:
+#     types: [ published ]
+#   workflow_dispatch:
+#     inputs:
+#       version:
+#         description: 'Release version tag, for example 5.5.4'
+#         required: true
+#         type: string
+# 
 concurrency:
   group: release-mcp-${{ github.event_name }}-${{ github.event_name == 'release' && github.event.release.tag_name || inputs.version }}
   cancel-in-progress: true

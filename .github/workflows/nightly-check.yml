@@ -17,11 +17,12 @@
 
 name: Nightly - Check
 
-on:
-  schedule:
-    - cron: '0 17 * * *' # Daily at 01:00 Asia/Shanghai (17:00 UTC).
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   schedule:
+#     - cron: '0 17 * * *' # Daily at 01:00 Asia/Shanghai (17:00 UTC).
+#   workflow_dispatch:
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

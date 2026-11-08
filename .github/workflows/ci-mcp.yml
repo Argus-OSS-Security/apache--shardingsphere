@@ -17,17 +17,18 @@
 
 name: CI - MCP
 
-on:
-  pull_request:
-    branches: [ master ]
-    paths:
-      - '.github/workflows/ci-mcp.yml'
-      - '.github/actions/setup-build-environment/**'
-      - 'pom.xml'
-      - 'database/connector/**'
-      - 'mcp/**'
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     branches: [ master ]
+#     paths:
+#       - '.github/workflows/ci-mcp.yml'
+#       - '.github/actions/setup-build-environment/**'
+#       - 'pom.xml'
+#       - 'database/connector/**'
+#       - 'mcp/**'
+#   workflow_dispatch:
+# 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
